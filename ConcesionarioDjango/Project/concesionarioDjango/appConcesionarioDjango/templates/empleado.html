@@ -18,14 +18,14 @@
             {{ empleado.antiguedad}}
         </li>
         <li>
-            <a href="/appConcesionarioDjango/departamento/{{ empleado.departamento.id }}">{{ empleado.departamento}}</a>
+             <a href="{% url 'detail' empleado.departamento.id %}">{{ empleado.departamento}}</a>
         </li>
     </ul>
 	<h3>Lista de habilidades</h3>
 	{% if habilidades %}
 		<ol>
 		{% for h in habilidades %}
-			<li><a href="/appConcesionarioDjango/habilidad/{{ h.id }}">{{ h.nombre}}</a></li>
+			<li><a href="{% url 'habilidad' h.id %}">{{ h.nombre}}</a></li>
 		{% endfor %}
 		</ol>
 	{% else %}

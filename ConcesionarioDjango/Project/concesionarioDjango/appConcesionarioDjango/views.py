@@ -11,6 +11,27 @@ def indexcar(request):
 	context = {'empleadosFiltrados': empleadosFiltrados }
 	return render(request, 'indexcar.html', context)
 
+def blog(request):
+	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
+	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
+	context = {'empleadosFiltrados': empleadosFiltrados }
+	return render(request, 'blog.html', context)
+def contact(request):
+	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
+	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
+	context = {'empleadosFiltrados': empleadosFiltrados }
+	return render(request, 'contact.html', context)
+def fullwidth(request):
+	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
+	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
+	context = {'empleadosFiltrados': empleadosFiltrados }
+	return render(request, 'fullwidth.html', context)
+def singlepost(request):
+	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
+	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
+	context = {'empleadosFiltrados': empleadosFiltrados }
+	return render(request, 'singlepost.html', context)
+
 def index(request):
 	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
 	context = {'lista_departamentos': departamentos }

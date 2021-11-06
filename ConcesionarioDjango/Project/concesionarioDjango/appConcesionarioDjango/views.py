@@ -5,11 +5,11 @@ from .models import Departamento, Habilidad, Empleado
 
 #devuelve el listado de empresas
 
-def home(request):
+def indexcar(request):
 	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
 	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
 	context = {'empleadosFiltrados': empleadosFiltrados }
-	return render(request, 'home.html', context)
+	return render(request, 'indexcar.html', context)
 
 def index(request):
 	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))

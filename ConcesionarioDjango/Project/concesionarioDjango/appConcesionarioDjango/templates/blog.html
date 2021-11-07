@@ -23,18 +23,18 @@
 			<!--__--__--__--__--__--  L O G O  &   N A V    B A R --__--___--__--__--__-->
 			<header>
 				<div id="logo">
-				<h1>Source X <span id="ii">II</span>  <span id="srt">SRT</span></h1>
+				<h1>Resale X <span id="iisrt"><span id="ii">II</span>  <span id="srt">SRT</span></span></h1>
 				<div id="tagline">
-					<h2>Just another Geeksband Template !</h2>
+					<h2>¡Otra forma de conducir!</h2>
 				</div>
 				</div>
 				<nav>
 					<ul>
 						<li><a href="{% url 'indexcar' %}" id="homenav">Home</a></li>
-						<li><a href="{% url 'blog' %}" id="blognav">Blog</a></li>
-						<li><a href="{% url 'fullwidth' %}" id="fullwidthnav">Full width</a></li>
-						<li><a href="{% url 'contact' %}">Contact</a></li>
-						<li><a href="about.html">About</a></li>
+						<li><a href="{% url 'blog' %}" id="blognav">Categoría</a></li>
+						<li><a href="{% url 'fullwidth' %}" id="fullwidthnav">Marca</a></li>
+						<li><a href="{% url 'contact' %}">Contactanos</a></li>
+						<li><a href="#">About</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -45,28 +45,22 @@
 				<!--__--__--__-- A R T I C L E S --__--__--__--__-->
 				<div id="articles">
 					<article>
-						<h1><a href="singlepost.html">Suspendisse Enim Elit Tempor Acer</a></h1>
+						<h1><a href="{% url 'todoterrenos' %}">Todoterrenos</a></h1>
 						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Freebies</a>.</h2>
-						<img src="../static/img/a1.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. <a class="continue" href="singlepost.html">Continue Reading &rarr;</a></p>
+						<img src="../static/img/todoterrenos.jpg" alt="" />
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. <a href="{% url 'singlepost' %}">Continue Reading &rarr;</a></p>
 					</article>
 					<article>
-						<h1><a href="singlepost.html">Mauris Sed Lectus Duieleifend Quis Sem</a></h1>
+						<h1><a href="{% url 'deportivos' %}">Deportivos</a></h1>
 						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Tutorials</a>.</h2>
-						<img src="../static/img/a2.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. <a class="continue" href="singlepost.html">Continue Reading &rarr;</a></p>
+						<img src="../static/img/deportivos.jpg" alt="" />
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. <a class="continue" href="{% url 'singlepost' %}">Continue Reading &rarr;</a></p>
 					</article>
 					<article>
-						<h1><a href="singlepost.html">Mauris Sed Lectus Duieleifend Quis Sem</a></h1>
+						<h1><a href="{% url 'coupes' %}">Coupes</a></h1>
 						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Tutorials</a>.</h2>
-						<img src="../static/img/a3.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet. <a class="continue" href="singlepost.html">Continue Reading &rarr;</a></p>
-					</article>
-					<article>
-						<h1><a href="singlepost.html">Mauris Sed Lectus Duieleifend Quis Sem</a></h1>
-						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Photography</a>.</h2>
-						<img src="../static/img/a4.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Eleifend quis sem. <a class="continue" href="singlepost.html">Continue Reading &rarr;</a></p>
+						<img src="../static/img/coupes.jpg" alt="" />
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet. <a class="continue" href="{% url 'singlepost' %}">Continue Reading &rarr;</a></p>
 					</article>
 				</div>
 				<!--__--__--__--  S I D E B A R --__--__--__--__-->

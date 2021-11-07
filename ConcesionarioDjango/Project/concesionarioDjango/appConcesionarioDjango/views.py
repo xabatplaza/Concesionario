@@ -3,6 +3,22 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render
 from .models import Marca, Categoria, Coche
 
+def indexcar(request):
+	return render(request, 'index.html')
+def blog(request):
+	return render(request, 'blog.html')
+def contact(request):
+	return render(request, 'contact.html')
+def fullwidth(request):
+	return render(request, 'fullwidth.html')
+def singlepost(request):
+	return render(request, 'singlepost.html')
+def deportivos(request):
+	return render(request, 'deportivos.html')
+def todoterrenos(request):
+	return render(request, 'todoterrenos.html')
+def coupes(request):
+	return render(request, 'coupes.html')
 #devuelve el listado de empresas
 def index(request):
 	marcas = get_list_or_404(Marca.objects.order_by('nombre'))
@@ -28,7 +44,7 @@ def coches(request, marca_id):
 def coche(request, coche_id):
 	coche = get_object_or_404(Coche, pk=coche_id)
 	context = { 'coche': coche }
-    return render(request, 'coche.html', context)
+	return render(request, 'coche.html', context)
 	
 
 	#output = ', '.join([str(coche.id), coche.nombre, str(coche.fecha_creacion), str(coche.caballosPotencia), str(coche.marca), str(coche.categoria)])
@@ -41,5 +57,5 @@ def categoria(request, categoria_id):
 	categoria = get_object_or_404(Categoria, pk=categoria_id)
 	coches =  categoria.coche_set.all()
 	context = { 'coches': coches, 'categoria' : categoria }
-    return render(request, 'categoria.html', context)
+	return render(request, 'categoria.html', context)
 

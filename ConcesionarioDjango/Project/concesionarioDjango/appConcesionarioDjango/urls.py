@@ -2,7 +2,24 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('indexcar', views.indexcar, name='indexcar'),
     path('', views.index, name='index'),
+    path('blog', views.blog, name='blog'),
+    path('', views.index, name='index'),
+    path('contact', views.contact, name='contact'),
+    path('', views.index, name='index'),
+    path('fullwidth', views.fullwidth, name='fullwidth'),
+    path('', views.index, name='index'),
+    path('singlepost', views.singlepost, name='singlepost'),
+    path('', views.index, name='index'),
+    path('todoterrenos', views.todoterrenos, name='todoterrenos'),
+    path('', views.index, name='index'),
+    path('deportivos', views.deportivos, name='deportivos'),
+    path('', views.index, name='index'),
+    path('coupes', views.coupes, name='coupes'),
+    path('', views.index, name='index'),
+    
+    
     path('marca/<int:marca_id>/', views.marca, name='marca'),
     path('marca/<int:marca_id>/coches', views.coches, name='coches'),
     path('coche/<int:coche_id>', views.coche, name='coche'),

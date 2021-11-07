@@ -1,70 +1,77 @@
 /****************** U S E D   F O N T S **********************/
 @font-face {
-    font-family: 'LeagueGothic';
-    src: url('../fonts/League_Gothic-webfont.eot');
-    src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/League_Gothic-webfont.woff') format('woff'),
-         url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
-         url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'LeagueGothic';
+	src: url('../fonts/League_Gothic-webfont.eot');
+	src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/League_Gothic-webfont.woff') format('woff'),
+		url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
+		url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
+
 @font-face {
-    font-family: 'Source';
-    src: url('../fonts/SourceSansPro-Light-webfont.eot');
-    src: url('../fonts/SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/SourceSansPro-Light-webfont.woff') format('woff'),
-         url('../fonts/SourceSansPro-Light-webfont.ttf') format('truetype'),
-         url('../fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Source';
+	src: url('../fonts/SourceSansPro-Light-webfont.eot');
+	src: url('../fonts/SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SourceSansPro-Light-webfont.woff') format('woff'),
+		url('../fonts/SourceSansPro-Light-webfont.ttf') format('truetype'),
+		url('../fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
+
 @font-face {
-    font-family: 'ethno';
-    src: url('../fonts/ethnocentric_rg-webfont.eot');
-    src: url('../fonts/ethnocentric_rg-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/ethnocentric_rg-webfont.woff') format('woff'),
-         url('../fonts/ethnocentric_rg-webfont.ttf') format('truetype'),
-         url('../fonts/ethnocentric_rg-webfont.svg#ethnocentricregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'ethno';
+	src: url('../fonts/ethnocentric_rg-webfont.eot');
+	src: url('../fonts/ethnocentric_rg-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ethnocentric_rg-webfont.woff') format('woff'),
+		url('../fonts/ethnocentric_rg-webfont.ttf') format('truetype'),
+		url('../fonts/ethnocentric_rg-webfont.svg#ethnocentricregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
 }
+
 /********************* R E S E T *************************/
-*{
+* {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-img{
+
+img {
 	border: none;
 	border-radius: 3px;
 }
 
-a{
+a {
 	color: #fff;
 	text-decoration: none;
 	text-shadow: none;
 }
-a:hover{
+
+a:hover {
 	color: #B82924;
 }
-p{
+
+p {
 	margin-bottom: 8px;
 }
+
 ::-moz-selection {
-       background-color: #B82924;
-       color: #fff;
+	background-color: #B82924;
+	color: #fff;
 }
 
 /* Works in Safari */
 ::selection {
-       background-color: #B82924;
-       color: #fff;
+	background-color: #B82924;
+	color: #fff;
 }
 
 /************** G E N E R A L    S T Y L E ***************/
-#wrapper{
+#wrapper {
 	width: 950px;
 	margin: 16px auto;
 	background-color: #121212;
@@ -72,14 +79,15 @@ p{
 	box-shadow: 0 4px 6px #000;
 }
 
-body{
+body {
 	background: url('../img/bg.png') repeat;
 	font-family: Source, Tahoma, sans-serif;
 	color: #fff;
 	font-size: 14px;
 	text-shadow: 1px 1px 0px #000;
 }
-#srt{
+
+#srt {
 	color: #f9f9f9;
 	display: block;
 	float: right;
@@ -92,7 +100,8 @@ body{
 	font-family: ethno, sans-serif;
 	font-weight: normal;
 }
-#ii{
+
+#ii {
 	font-size: 60px;
 	font-family: LeagueGothic, sans-serif;
 	font-weight: bold;
@@ -108,7 +117,7 @@ body{
 }
 
 /************* L O G O   &  N A V   B A R    S T Y L E ****************/
-header h1{
+header h1 {
 	font-family: LeagueGothic, Impact, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -118,7 +127,8 @@ header h1{
 	width: 300px;
 	margin-bottom: 2px;
 }
-header h2{
+
+header h2 {
 	font-size: 16px;
 	font-weight: normal;
 	font-family: LeagueGothic, sans-serif;
@@ -126,18 +136,24 @@ header h2{
 	text-shadow: 1px 1px 0 #000;
 	text-transform: uppercase;
 }
-#tagline{
-		margin-top: -8px;
-}		
-#logo, nav, nav li{
+
+#tagline {
+	margin-top: -8px;
+}
+
+#logo,
+nav,
+nav li {
 	display: inline-block;
 	vertical-align: top;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 }
-#logo{
+
+#logo {
 	width: 270px;
 }
+
 nav a {
 	color: #fff;
 	font-family: LeagueGothic, sans-serif;
@@ -148,40 +164,50 @@ nav a {
 	text-shadow: 1px 1px 0px #000;
 }
 
-nav{
+nav {
 	margin: 20px 4px 0 0;
 	float: right;
 }
-header{
+
+header {
 	margin-bottom: 25px;
 }
-#home a#homenav, #blog a#blognav, #fullwidth a#fullwidthnav, #contact a#contactnav{
+
+#home a#homenav,
+#blog a#blognav,
+#fullwidth a#fullwidthnav,
+#contact a#contactnav {
 	color: #b82924;
 }
+
 /*************** B A N N E R    S T Y L E ******************/
-#banner{
+#banner {
 	position: relative;
 	margin-bottom: 30px;
 }
-#banneri{
+
+#banneri {
 	position: absolute;
 	bottom: 15%;
 	left: 0;
 	width: 500px;
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(0, 0, 0, .8);
 	padding: 5px 10px;
 }
-#banner img{
+
+#banner img {
 	box-shadow: 0 4px 6px #000;
 }
-#banner h1{
+
+#banner h1 {
 	font-family: LeagueGothic, Impact, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 0px #000;
 	display: inline;
 }
-#banner .rm{
+
+#banner .rm {
 	position: absolute;
 	color: #000;
 	background-color: #fff;
@@ -191,155 +217,189 @@ header{
 }
 
 /************* H O M E    C O N T E N T *******************/
-#line h1{
+#line h1 {
 	font-family: LeagueGothic, Impact, sans-serif;
 	font-weight: normal;
 	font-size: 30px;
 	text-transform: uppercase;
 	color: #B82924;
 	text-shadow: 2px 2px 0 #000;
-	text-align:  center;
+	text-align: center;
 }
-#line h1, .dline{
+
+#line h1,
+.dline {
 	display: inline-block;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 	margin: 0 0 0 10px;
 }
-#line{
-		margin: 0 0 0 80px;
+
+#line {
+	margin: 0 0 0 80px;
 }
-.dline{
+
+.dline {
 	width: 312px;
 	height: 3px;
-	background: url('../img/bgdline.png') repeat-x ;
+	background: url('../img/bgdline.png') repeat-x;
 	margin-bottom: 10px;
 }
-#ourserv article{
+
+#ourserv article {
 	width: 275px;
 	display: inline-block;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 	vertical-align: top;
 	margin: 0 38px 0 0;
 }
-#ourserv article h1{
+
+#ourserv article h1 {
 	color: #B82924;
 	width: 275px;
 	display: inline-block;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 	vertical-align: top;
 	margin: 0 38px 0 0;
 }
-#ourserv article h1, #latestp article h1{
+
+#ourserv article h1,
+#latestp article h1 {
 	font-family: LeagueGothic, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	font-size: 22px;
 	margin-bottom: 5px;
 }
-.lastarticle{
-	margin:0;
+
+.lastarticle {
+	margin: 0;
 }
-#ourserv{
+
+#ourserv {
 	margin: 8px 0 15px 20px;
 	width: 100%;
 }
-#ourserv img, #latestp img{
+
+#ourserv img,
+#latestp img {
 	margin-bottom: 5px;
-    box-shadow: 0 4px 6px #000;
+	box-shadow: 0 4px 6px #000;
 }
-.rm{
+
+.rm {
 	color: #121212;
 	background-color: #F2F2F2;
 	padding: 1px 4px;
-	display:block;
+	display: block;
 	width: 58px;
 	margin-top: 5px;
 	box-shadow: 0px 0px 3px #000;
 	font-family: LeagueGothic, sans-serif;
-	text-transform: uppercase; 
+	text-transform: uppercase;
 	font-size: 18px;
 	border-radius: 2px;
 }
-.rm:hover{
+
+.rm:hover {
 	background-color: #B82924;
 	color: #121212;
-}	
+}
 
-#sline h1{
+#sline h1 {
 	font-family: LeagueGothic, Impact, sans-serif;
 	font-weight: normal;
 	font-size: 30px;
 	text-transform: uppercase;
 	color: #B82924;
 	text-shadow: 2px 2px 0 #000;
-	text-align:  center;
+	text-align: center;
 }
-#sline h1, .sdline{
+
+#sline h1,
+.sdline {
 	display: inline-block;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 	margin: 0 0 0 10px;
 }
-#sline{
+
+#sline {
 	margin: 20px 0 10px 80px;
 }
-.sdline{
+
+.sdline {
 	width: 300px;
 	height: 2px;
-	background: url('../img/bgdline.png') repeat-x ;
+	background: url('../img/bgdline.png') repeat-x;
 	margin-bottom: 10px;
 }
-#latestp article{
+
+#latestp article {
 	width: 210px;
 	display: inline-block;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 	margin-right: 20px;
 }
-#latestp article h1{
+
+#latestp article h1 {
 	width: 210px;
 	display: inline-block;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 	color: #B82924;
 	margin-right: 20px;
 }
-#latestp{
+
+#latestp {
 	margin-left: 20px;
 }
 
 /************* B L O G    S T Y L E  &   C O N T A C T   P A G E *****************************/
-#articles, #sidebar{
+#articles,
+#sidebar {
 	display: inline-block;
 	vertical-align: top;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 }
-#blog section, #contact section{
+
+#blog section,
+#contact section {
 	margin: 30px 0 0 10px;
 }
-#sidebar, #contat #sidebar{
+
+#sidebar,
+#contat #sidebar {
 	width: 280px;
-	margin:0 0 0 55px;
+	margin: 0 0 0 55px;
 }
-#articles, #contactpost{
+
+#articles,
+#contactpost {
 	width: 600px;
-	margin:0 0 40px 0;
+	margin: 0 0 40px 0;
 }
-#blog li, #contact li{
+
+#blog li,
+#contact li {
 	list-style-type: square;
 }
-#blog article{
+
+#blog article {
 	width: 580px;
 	margin-bottom: 40px;
 }
-#blog footer, #contact footer{
+
+#blog footer,
+#contact footer {
 	margin-top: 0px;
 }
-#blog article h1 a{
+
+#blog article h1 a {
 	font-family: LeagueGothic, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -348,7 +408,8 @@ header{
 	word-spacing: 2px;
 	margin-bottom: 5px;
 }
-#blog article h2{
+
+#blog article h2 {
 	font-size: 12px;
 	font-weight: normal;
 	letter-spacing: 0.2px;
@@ -358,14 +419,18 @@ header{
 	font-family: source, sans-serif;
 	text-transform: none;
 }
-#blog article h2 a:hover{
+
+#blog article h2 a:hover {
 	text-decoration: underline;
 }
-#blog article img{
+
+#blog article img {
 	box-shadow: 0 4px 6px #000;
 	margin-bottom: 10px;
 }
-#sidebar h1, #contact #sidebar h1{
+
+#sidebar h1,
+#contact #sidebar h1 {
 	font-family: LeagueGothic, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -374,65 +439,87 @@ header{
 	word-spacing: 2px;
 	margin-bottom: 4px;
 }
-#sidebar li, #contact #sidebar li {
-	margin:0 0 4px 25px;
+
+#sidebar li,
+#contact #sidebar li {
+	margin: 0 0 4px 25px;
 	color: #b82924;
 }
-#sidebar li:hover, #contact #sidebar li:hover{
+
+#sidebar li:hover,
+#contact #sidebar li:hover {
 	margin-left: 30px;
 }
-#sidebar li a:hover, #contact #sidebar li a:hover{
+
+#sidebar li a:hover,
+#contact #sidebar li a:hover {
 	text-decoration: underline;
 }
-#blog aside, #contact #sidebar aside{
+
+#blog aside,
+#contact #sidebar aside {
 	margin: 0 0 20px 0;
 }
-#cat, #archives, #contact #sidebar  #cat, #contact #sidebar #archives{
+
+#cat,
+#archives,
+#contact #sidebar #cat,
+#contact #sidebar #archives {
 	width: 130px;
 	display: inline-block;
 	vertical-align: top;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 }
-.continue{
+
+.continue {
 	text-decoration: underline;
 }
+
 /* SINGLE POST STYLE  and CONTACT PAGE with SIDEBAR*/
-#singlepost, #sidebar, #contactpost{
+#singlepost,
+#sidebar,
+#contactpost {
 	display: inline-block;
 	vertical-align: top;
 	*display: inline;
-	zoom:1;
+	zoom: 1;
 }
-#singlepost{
+
+#singlepost {
 	margin-right: 20px;
 }
+
 /* CONTACT PAGE */
-#contactpost p{
+#contactpost p {
 	margin-bottom: 25px;
 }
-input[type="user"]{
+
+input[type="user"] {
 	display: block;
 	float: right;
 	height: 20px;
 	width: 280px;
 	padding-left: 3px;
 }
-input[type="email"]{
+
+input[type="email"] {
 	display: block;
 	float: right;
 	height: 20px;
 	width: 280px;
 	padding-left: 3px;
 }
-#message{
+
+#message {
 	display: block;
 	float: right;
 	width: 280px;
 	height: 130px;
 	padding-left: 3px;
 }
-input[type="submit"]{
+
+input[type="submit"] {
 	display: block;
 	float: right;
 	font-family: LeagueGothic, sans-serif;
@@ -442,51 +529,79 @@ input[type="submit"]{
 	color: #121212;
 
 }
-input, #message{
+
+input,
+#message {
 	margin-right: 180px;
 	background-color: #f8f8f8;
 	border: 2px inset #000;
 	border-radius: 3px;
 }
-input[type="submit"]:hover{
-	cursor:pointer;
+
+input[type="submit"]:hover {
+	cursor: pointer;
 }
-input[type="submit"]:active{
+
+input[type="submit"]:active {
 	border: 2px inset #b2b2b2;
 }
 
 /************* F U L L  W I D T H   &  S I N G L E   P O S T    S T Y L E*********************/
-#fullwidth h1,#fullwidth  h2,#fullwidth  h3,#fullwidth  h4,#fullwidth  h5,#fullwidth  h6, h1, h2, h3, h4, h5, h6{
+#fullwidth h1,
+#fullwidth h2,
+#fullwidth h3,
+#fullwidth h4,
+#fullwidth h5,
+#fullwidth h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: LeagueGothic, sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
 }
-#fullwidth section h2, #singlepost section h2{
+
+#fullwidth section h2,
+#singlepost section h2 {
 	color: #b82924;
 }
-.mg{ /*just for examples, do not use this class*/
+
+.mg {
+	/*just for examples, do not use this class*/
 	margin: 8px 0 12px 0;
 }
-#fullwidth section a, #singlepost section a{
+
+#fullwidth section a,
+#singlepost section a {
 	text-decoration: underline;
 }
-#fullwidth section ul li, #singlepost section ul li{
+
+#fullwidth section ul li,
+#singlepost section ul li {
 	list-style-type: square;
 	margin-left: 20px;
 }
-#fullwidth section ol li, #singlepost section ol li{
+
+#fullwidth section ol li,
+#singlepost section ol li {
 	list-style-type: decimal;
 	margin-left: 20px;
 }
-.right{
+
+.right {
 	float: right;
 	margin-left: 10px;
 }
-.left{
+
+.left {
 	float: left;
 	margin-right: 10px;
 }
-.center{
+
+.center {
 	display: block;
 	text-align: center;
 	margin: 20px auto;
@@ -494,7 +609,7 @@ input[type="submit"]:active{
 
 /************* F O O T E R     S T Y L E *************************/
 
-footer{
+footer {
 	margin-top: 30px;
 	text-align: right;
 }

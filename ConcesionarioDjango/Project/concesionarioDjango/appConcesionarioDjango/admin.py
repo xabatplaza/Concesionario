@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Departamento, Habilidad, Empleado
-admin.site.register(Departamento)
-admin.site.register(Habilidad)
-admin.site.register(Empleado)
+from .models import Marca, Categoria, Coche
+admin.site.register(Marca)
+admin.site.register(Categoria)
+admin.site.register(Coche)
 # Register your models here.

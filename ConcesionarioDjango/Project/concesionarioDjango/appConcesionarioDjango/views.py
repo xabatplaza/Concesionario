@@ -1,65 +1,34 @@
-from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
-from .models import Departamento, Habilidad, Empleado
+from .models import Marca, Categoria, Coche
 
 #devuelve el listado de empresas
-
-def indexcar(request):
-	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
-	context = {'empleadosFiltrados': empleadosFiltrados }
-	return render(request, 'indexcar.html', context)
-
-def blog(request):
-	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
-	context = {'empleadosFiltrados': empleadosFiltrados }
-	return render(request, 'blog.html', context)
-def contact(request):
-	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
-	context = {'empleadosFiltrados': empleadosFiltrados }
-	return render(request, 'contact.html', context)
-def fullwidth(request):
-	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
-	context = {'empleadosFiltrados': empleadosFiltrados }
-	return render(request, 'fullwidth.html', context)
-def singlepost(request):
-	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	empleadosFiltrados = Empleado.objects.raw('SELECT * FROM( SELECT * FROM appConcesionarioDjango_Empleado ORDER BY antiguedad DESC) GROUP BY departamento_id ')
-	context = {'empleadosFiltrados': empleadosFiltrados }
-	return render(request, 'singlepost.html', context)
-
 def index(request):
-	departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
-	context = {'lista_departamentos': departamentos }
-	return render(request, 'index.html', context)
+	marcas = Marca.objects.order_by('nombre')
+	output = ', '.join([m.nombre for m in marcas])
+	return HttpResponse(output)
 
-#devuelve los datos de un departamento
-def detail(request, departamento_id):
-	departamento = get_object_or_404(Departamento, pk=departamento_id)
-	context = {'departamento': departamento }
-	return render(request, 'detail.html', context)
+#devuelve los datos de una marca
+def marca(request, marca_id):
+	marca = Marca.objects.get(pk=marca_id)
+	output = ', '.join([str(marca.id), marca.nombre, str(marca.anyoDeCreacion), marca.fundador])
+	return HttpResponse(output)
 
-#devuelve los empelados de un departamento
-def empleados(request, departamento_id):
-	departamento = get_object_or_404(Departamento, pk=departamento_id)
-	empleados =  departamento.empleado_set.all()
-	context = {'departamento': departamento, 'empleados': empleados }
-	return render(request, 'empleados.html', context)
+#devuelve los coches de una marca
+def coches(request, marca_id):
+	marca = Marca.objects.get(pk=marca_id)
+	output = ', '.join([c.nombre for c in marca.coche_set.all()])
+	return HttpResponse(output)
 
-#devuelve los detalles de un empleado
-def empleado(request, empleado_id):
-	empleado = get_object_or_404(Empleado, pk=empleado_id)
-	habilidades =  empleado.habilidades.all()
-	context = {'empleado': empleado, 'habilidades': habilidades}
-	return render(request, 'empleado.html', context)
+#devuelve los detalles de un coche
+def coche(request, coche_id):
+	coche = Coche.objects.get(pk=coche_id)
+	output = ', '.join([str(coche.id), coche.nombre, str(coche.fecha_creacion), str(coche.caballosPotencia), str(coche.marca), str(coche.categoria)])
+	return HttpResponse(output)
 
-# Devuelve los detalles de una habilidad
-def habilidad(request, habilidad_id):
-	habilidad = get_object_or_404(Habilidad, pk=habilidad_id)
-	empleados =  habilidad.empleado_set.all()
-	context = {'empleados': empleados, 'habilidad': habilidad }
-	return render(request, 'habilidad.html', context)
+#devuelve los detalles de una categoria
+def categoria(request, categoria_id):
+	categoria = Categoria.objects.get(pk=categoria_id)
+	output = ', '.join([str(categoria.id), categoria.nombre, str([c.nombre for c in categoria.coche.all()])])
+	return HttpResponse(output)
+

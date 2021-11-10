@@ -14,9 +14,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('todoterrenos', views.todoterrenos, name='todoterrenos'),
     path('', views.index, name='index'),
-    path('deportivos', views.deportivos, name='deportivos'),
-    path('', views.index, name='index'),
-    path('coupes', views.coupes, name='coupes'),
+    path('marcas', views.marcas, name='marcas'),
     path('', views.index, name='index'),
     
     

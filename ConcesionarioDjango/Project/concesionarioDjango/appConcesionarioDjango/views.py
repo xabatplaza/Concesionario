@@ -13,12 +13,10 @@ def fullwidth(request):
 	return render(request, 'fullwidth.html')
 def singlepost(request):
 	return render(request, 'singlepost.html')
-def deportivos(request):
-	return render(request, 'deportivos.html')
+def marcas(request):
+	return render(request, 'marcas.html')
 def todoterrenos(request):
 	return render(request, 'todoterrenos.html')
-def coupes(request):
-	return render(request, 'coupes.html')
 #devuelve el listado de empresas
 def index(request):
 	marcas = get_list_or_404(Marca.objects.order_by('nombre'))

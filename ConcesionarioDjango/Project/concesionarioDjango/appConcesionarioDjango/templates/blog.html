@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% block categoria %}
 <html>
     <head>
         <meta charset="utf-8" />
@@ -44,47 +45,69 @@
 			
 				<!--__--__--__-- A R T I C L E S --__--__--__--__-->
 				<div id="articles">
+					
 					<article>
-						<h1><a href="{% url 'todoterrenos' %}">Todoterrenos</a></h1>
-						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Freebies</a>.</h2>
-						<img src="../static/img/todoterrenos.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. <a href="{% url 'singlepost' %}">Continue Reading &rarr;</a></p>
-					</article>
-					<article>
-						<h1><a href="{% url 'todoterrenos' %}">Deportivos</a></h1>
-						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Tutorials</a>.</h2>
-						<img src="../static/img/deportivos.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. <a class="continue" href="{% url 'singlepost' %}">Continue Reading &rarr;</a></p>
-					</article>
-					<article>
-						<h1><a href="{% url 'todoterrenos' %}">Coupes</a></h1>
-						<h2>Posted By: <a href="#">Admin</a> On January 29th, 2013 In <a href="#">Tutorials</a>.</h2>
-						<img src="../static/img/coupes.jpg" alt="" />
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, tortor at vulputate blandit, magna risus posuere turpis, nec cursus ipsum arcu nec felis. Mauris sed lectus dui. Suspendisse enim elit, tempor ac ullamcorper et, eleifend quis sem. Sed euismod sagittis ligula, a imperdiet sapien molestie nec. Curabitur ut eros a justo fermentum vulputate ac sit amet metus. Lorem ipsum dolor sit amet. <a class="continue" href="{% url 'singlepost' %}">Continue Reading &rarr;</a></p>
-					</article>
+						{% if lista_categorias %}
+										{% for c in lista_categorias %}
+											<h1><a href="{% url 'todoterrenos' %}"> {{c.nombre}}</a></h1>
+											<br>
+											{% load static %}
+												<img alt="{{ c.imagen }}" src="{% static c.imagen %}" /> 
+											<br>	
+											<h1>Descripcion:</h1> 
+											<br>
+											<p>{{c.info}} <a href="{% url 'singlepost' %}"> 
+												<br> <br>
+												Continue Reading &rarr;</a></p>
+											<br>		
+
+											{% block listaCoches %}
+											{% if coches %}
+												<ul>
+													<h1>Coches disponibles: </h1> <br>
+												{% for cs in coches %}
+													{% if c.id == cs.categoria.id %}
+														<h1><li><a href="{% url 'todoterrenos' %}"> &nbsp {{ cs.nombre }}</a></h1>
+															{% load static %}
+																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 	
+														{% endif %}	
+												{% endfor %}
+												</ul>
+											{% else %}
+												<p>No hay coches creados.</p>
+											{% endif %}
+											{% endblock %}
+											<br> <br> <br>
+
+										{% endfor %}
+									{% else %}
+										<p>No hay marcas creadas.</p>
+									{% endif %}
+						
 				</div>
 				<!--__--__--__--  S I D E B A R --__--__--__--__-->
 				<div id="sidebar">
 					<aside>
 						<div id="cat">
-							<h1>Categorias</h1>
-							<ul>
-								<li><a href="{% url 'todoterrenos' %}">Deportivo</a>
-								<li><a href="{% url 'todoterrenos' %}">Coupe</a>
-								<li><a href="{% url 'todoterrenos' %}">Todoterreno</a>
-							</ul>
-						</div>
-						<div id="archives">
-							<h1>Marca</h1>
-							<ul>
-								<li><a href="{% url 'todoterrenos' %}">Audi</a>
-								<li><a href="{% url 'todoterrenos' %}">Mercedes</a>
-								<li><a href="{% url 'todoterrenos' %}">BMW</a>
-							</ul>
+							
+								<h1>Categorias</h1>
+									<br>
+									{% if lista_categorias %}
+										{% for c in lista_categorias %}
+											<ul>
+											 <h2><li><a href="{% url 'todoterrenos' %}">{{ c.nombre }}</a></h2>
+											</ul>	
+										{% endfor %}
+									{% else %}
+										<p>No hay categorias creadas.</p>
+									{% endif %}
+							
 						</div>
 					</aside>
 				</div>
 			</section>
+
+			
 			<!--__--__--__--__--  T H E    F O O T E R --__--__--__--___--__--__--__-->
 			<footer>
 				<p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from <a href="http://geeksband.com">Geeksband.com</a> All Rights Reserved.</p>
@@ -92,6 +115,7 @@
 		</div>			
 	</body>
 </html>
+{% endblock %}	
 		
 		
 			

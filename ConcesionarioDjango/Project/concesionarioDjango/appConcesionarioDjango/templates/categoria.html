@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% block principal %}
 <html>
     <head>
         <meta charset="utf-8" />
@@ -17,7 +18,7 @@
         <![endif]-->
         <title>Source X SRT</title>
     </head>
-	<body id="fullwidth">
+	<body id="blog">
 		<div id="wrapper">
 		
 			<!--__--__--__--__--__--  L O G O  &   N A V    B A R --__--___--__--__--__-->
@@ -40,40 +41,57 @@
 			</header>
 			
 			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
+
 			<section>
-			<h1>Audi Q3</h1>
-			<img src="../static/img/audiq3.jpg"/>
-			<h2 class="mg">Headings</h2>
-			<h2 class="mg">Text</h2>
-				  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-				  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-				  irure dolor in reprehenderit in voluptate velit esse cillum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-				  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-				  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				  pariatur.</p>
-				  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-				  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-				  irure dolor in reprehenderit in voluptate velit esse cillum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-				  incididunt ut.</p>
-				  
-			 <h2 class="mg">Lists</h2>
-				<p class="mg">This is an unordered list:</p>
-				<ul>
-				  <li>Item 1</li>
-				  <li>Item 2</li>
-				  <li>Item 3</li>
-				  <li>Item 4</li>
-				</ul>
-				<p class="mg">This is an ordered list:</p>
-				<ol>
-				  <li>Item 1</li>
-				  <li>Item 2</li>
-				  <li>Item 3</li>
-				  <li>Item 4</li>
-				</ol>
+				{% if categoria %}		
+
+						<article id="singlepost">
+						<h1><a href="{% url 'blog' %}">{{categoria.nombre}}</a></h1> <br>
+						<p>{{categoria.info}}</p>
+						<br>
+						{% block listaCoches %}
+											{% if coches %}
+												<ul>
+												{% for cs in coches %}
+													{% if categoria.id == cs.categoria.id %}
+														<br>
+														<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1><br>
+															{% load static %}
+																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 	
+																<h2 class="mg">Informacion</h2>
+																<p>{{cs.info}}</p> <br><br>
+														{% endif %}	
+												{% endfor %}
+												</ul>
+											{% else %}
+												<p>No hay coches creados.</p>
+											{% endif %}
+						{% endblock %}
+				{% else %}
+					<p>No existe este coche.</p>
+				{% endif %}
+											<br> <br> <br>
+						</article>
+						
+				<!--__--__--__--  S I D E B A R --__--__--__--__-->
+				<div id="sidebar">
+					<aside>
+						<div id="cat">
+							<h1>Categoria</h1>
+									<br>
+									{% if categoria %}
+										
+											<ul>
+											 <h2><li><a href="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</a></h2>
+											</ul>	
+										
+									{% else %}
+										<p>No hay categorias creadas.</p>
+									{% endif %}
+						</div>
+						
+					</aside>
+				</div>
 			</section>
 			<!--__--__--__--__--  T H E    F O O T E R --__--__--__--___--__--__--__-->
 			<footer>
@@ -82,6 +100,8 @@
 		</div>			
 	</body>
 </html>
+{% endblock %}
+		
 		
 		
 			

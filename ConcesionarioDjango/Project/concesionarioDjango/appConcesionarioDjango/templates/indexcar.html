@@ -71,7 +71,7 @@
 												{% for cs in coches %}
 													{% if cs.categoria.id == 2 %}
 													<article>
-															<h1><a href="{% url 'todoterrenos' %}"> {{cs.nombre}}</a></h1>
+															<h1><a href="{% url 'coche' cs.id %}"> {{cs.nombre}}</a></h1>
 															<br>
 															{% load static %}
 																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 
@@ -79,7 +79,7 @@
 															<h1>Descripcion:</h1> 
 															<br>
 															<p>{{cs.info}} </p> <br>
-															<a href="{% url 'fullwidth' %}" class="rm">Read More</a><br><br>
+															<a href="{% url 'coche' cs.id %}" class="rm">Read More</a><br><br>
 													</article>
 													{% endif %}			
 												{% endfor %}
@@ -107,7 +107,7 @@
 												{% for cs in coches %}
 													{% if cs.categoria.id == 1 or cs.categoria.id == 3 %}
 													<article>
-															<h1><a href="{% url 'todoterrenos' %}"> {{cs.nombre}}</a></h1>
+															<h1><a href="{% url 'coche' cs.id %}"> {{cs.nombre}}</a></h1>
 															<br>
 															{% load static %}
 																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 
@@ -116,7 +116,7 @@
 															<br>
 															<p>{{cs.info}} <a href="{% url 'singlepost' %}"> 
 															<br><br>
-															<a href="{% url 'fullwidth' %}" class="rm">Read More</a><br>
+															<a href="{% url 'coche' cs.id %}" class="rm">Read More</a><br>
 													</article>
 													{% endif %}			
 												{% endfor %}

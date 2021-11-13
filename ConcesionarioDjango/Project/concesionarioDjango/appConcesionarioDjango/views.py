@@ -9,8 +9,7 @@ from pprint import pprint
 
 def contact(request):
 	return render(request, 'contact.html')
-def fullwidth(request):
-	return render(request, 'fullwidth.html')
+
 def singlepost(request):
 	return render(request, 'singlepost.html')
 
@@ -55,9 +54,14 @@ def coches(request, marca_id):
 def indexcar(request):
 	categorias = get_list_or_404(Categoria.objects.order_by('nombre'))
 	coches = get_list_or_404(Coche.objects)
-	categoria = 2;
 	context = {'lista_categorias': categorias, 'coches' : coches, 'categoria': categoria }
 	return render(request, 'indexcar.html', context)
+
+#devuelve los detalles de un coche
+def coche(request, coche_id):
+	coche = get_object_or_404(Coche, pk=coche_id)
+	context = {'coche' : coche }
+	return render(request, 'coche.html', context)
 
 
 #devuelve los detalles de una categoria

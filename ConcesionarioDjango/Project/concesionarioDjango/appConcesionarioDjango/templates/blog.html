@@ -49,7 +49,7 @@
 					<article>
 						{% if lista_categorias %}
 										{% for c in lista_categorias %}
-											<h1><a href="{% url 'todoterrenos' %}"> {{c.nombre}}</a></h1>
+											<h1><a href="{% url 'categoria' c.id %}"> {{c.nombre}}</a></h1>
 											<br>
 											{% load static %}
 												<img alt="{{ c.imagen }}" src="{% static c.imagen %}" /> 
@@ -67,7 +67,7 @@
 													<h1>Coches disponibles: </h1> <br>
 												{% for cs in coches %}
 													{% if c.id == cs.categoria.id %}
-														<h1><li><a href="{% url 'todoterrenos' %}"> &nbsp {{ cs.nombre }}</a></h1>
+														<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1>
 															{% load static %}
 																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 	
 														{% endif %}	
@@ -95,7 +95,7 @@
 									{% if lista_categorias %}
 										{% for c in lista_categorias %}
 											<ul>
-											 <h2><li><a href="{% url 'todoterrenos' %}">{{ c.nombre }}</a></h2>
+											 <h2><li><a href="{% url 'categoria' c.id %}">{{ c.nombre }}</a></h2>
 											</ul>	
 										{% endfor %}
 									{% else %}

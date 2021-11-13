@@ -50,7 +50,7 @@
 						<article>
 							{% if lista_marcas %}
 										{% for m in lista_marcas %}
-											<h1><a href="{% url 'todoterrenos' %}"> {{m.nombre}}</a></h1>
+											<h1>{{m.nombre}}</h1>
 											<br>
 											{% load static %}
 												<img alt="{{ m.imagen }}" src="{% static m.imagen %}" /> 
@@ -71,7 +71,7 @@
 													<h1>Coches disponibles: </h1> <br>
 												{% for cs in coches %}
 													{% if m.id == cs.marca.id %}
-														<h1><li><a href="{% url 'todoterrenos' %}"> &nbsp {{ cs.nombre }}</a></h1>	
+														<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1>	
 															{% load static %}
 																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 
 														{% endif %}	
@@ -100,7 +100,7 @@
 									{% if lista_marcas %}
 										{% for m in lista_marcas %}
 											<ul>
-											<h2><li><a href="{% url 'todoterrenos' %}">{{ m.nombre }}</a></h2>
+											<h2><li>{{ m.nombre }}</h2>
 											</ul>	
 										{% endfor %}
 									{% else %}

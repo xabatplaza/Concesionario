@@ -8,9 +8,9 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('contact', views.contact, name='contact'),
 
-    path('fullwidth', views.fullwidth, name='fullwidth'),
+
     path('singlepost', views.singlepost, name='singlepost'),
-    path('todoterrenos', views.todoterrenos, name='todoterrenos'),
+  
     
     
 
@@ -19,6 +19,6 @@ urlpatterns = [
     
     path('marca/<int:marca_id>/', views.marca, name='marca'),
     path('marca/<int:marca_id>/coches', views.coches, name='coches'),
-    #path('coche/<int:coche_id>', views.coche, name='coche'),
+    path('coche/<int:coche_id>', views.coche, name='coche'),
     path('categoria/<int:categoria_id>', views.categoria, name='categoria')
 ]

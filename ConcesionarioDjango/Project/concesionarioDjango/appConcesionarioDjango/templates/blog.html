@@ -1,121 +1,126 @@
 <!DOCTYPE html>
-{% block categoria %}
 <html>
-    <head>
-        <meta charset="utf-8" />
-		{% block css %}    
-			{% load static %}
-				<link rel="stylesheet" href="{% static 'css/style.css' %}" >
-				<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen">
-				<link rel="stylesheet" href="{% static 'css/default/default.css' %}" type="text/css" media="screen">
-		{% endblock %}
-		{% block js %}
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-			<script src="../static/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
-		{% endblock %}
-        <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <title>Source X SRT</title>
-    </head>
-	<body id="blog">
-		<div id="wrapper">
+	
+<head>
+	<title>{% block titulo %}Gestor de categorias{% endblock %}</title>
+	<meta charset="utf-8" />
+	{% block css %}    
+		{% load static %}
+			<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+			<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen">
+			<link rel="stylesheet" href="{% static 'css/default/default.css' %}" type="text/css" media="screen">
+	{% endblock %}
+	{% block js %}
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="../static/js/jquery.nivo.slider.pack.js"></script>
+	{% endblock %}
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+	
+<body id="blog">
 		
-			<!--__--__--__--__--__--  L O G O  &   N A V    B A R --__--___--__--__--__-->
-			<header>
-				<div id="logo">
-				<h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
-				<div id="tagline">
-					<h2>¡Otra forma de conducir!</h2>
-				</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="{% url 'indexcar' %}" id="homenav">Home</a></li>
-						<li><a href="{% url 'blog' %}" id="blognav">Categoría</a></li>
-						<li><a href="{% url 'marcas' %}">Marca</a></li>
-						<li><a href="{% url 'contact' %}">Contactanos</a></li>
-						<li><a href="#">About</a></li>
-					</ul>
-				</nav>
-			</header>
-			
-			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
-			<section>
-			
-				<!--__--__--__-- A R T I C L E S --__--__--__--__-->
-				<div id="articles">
-					
-					<article>
-						{% if lista_categorias %}
-										{% for c in lista_categorias %}
-											<h1><a href="{% url 'categoria' c.id %}"> {{c.nombre}}</a></h1>
-											<br>
-											{% load static %}
-												<img alt="{{ c.imagen }}" src="{% static c.imagen %}" /> 
-											<br>	
-											<h1>Descripcion:</h1> 
-											<br>
-											<p>{{c.info}} <a href="{% url 'categoria' c.id %}"> 
-												<br> <br>
-												Continue Reading &rarr;</a></p>
-											<br>		
+<div id="wrapper">
 
-											{% block listaCoches %}
-											{% if coches %}
-												<ul>
-													<h1>Coches disponibles: </h1> <br>
-												{% for cs in coches %}
-													{% if c.id == cs.categoria.id %}
-														<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1>
-															{% load static %}
-																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 	
-														{% endif %}	
-												{% endfor %}
-												</ul>
-											{% else %}
-												<p>No hay coches creados.</p>
-											{% endif %}
-											{% endblock %}
-											<br> <br> <br>
-
-										{% endfor %}
-									{% else %}
-										<p>No hay marcas creadas.</p>
-									{% endif %}
-						
-				</div>
-				<!--__--__--__--  S I D E B A R --__--__--__--__-->
-				<div id="sidebar">
-					<aside>
-						<div id="cat">
-							
-								<h1>Categorias</h1>
+	<!--__--__--__--__--__--  L O G O  &   N A V    B A R --__--___--__--__--__-->
+	<header>
+		<div id="logo">
+		<h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
+		<div id="tagline">
+			<h2>¡Otra forma de conducir!</h2>
+		</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="{% url 'indexcar' %}" id="homenav">Home</a></li>
+				<li><a href="{% url 'blog' %}" id="blognav">Categoría</a></li>
+				<li><a href="{% url 'marcas' %}">Marca</a></li>
+				<li><a href="{% url 'contact' %}">Contactanos</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
+	<section>
+	
+		<!--__--__--__-- A R T I C L E S --__--__--__--__-->
+		{% block categoria %}
+		<div id="articles">
+			<article>
+				{% if lista_categorias %}
+								{% for c in lista_categorias %}
+									<h1><a href="{% url 'categoria' c.id %}"> {{c.nombre}}</a></h1>
 									<br>
-									{% if lista_categorias %}
-										{% for c in lista_categorias %}
-											<ul>
-											 <h2><li><a href="{% url 'categoria' c.id %}">{{ c.nombre }}</a></h2>
-											</ul>	
-										{% endfor %}
-									{% else %}
-										<p>No hay categorias creadas.</p>
-									{% endif %}
-							
-						</div>
-					</aside>
-				</div>
-			</section>
+									{% load static %}
+										<img alt="{{ c.imagen }}" src="{% static c.imagen %}" /> 
+									<br>	
+									<h1>Descripcion:</h1> 
+									<br>
+									<p>{{c.info}} <a href="{% url 'categoria' c.id %}"> 
+										<br> <br>
+										Continue Reading &rarr;</a></p>
+									<br>		
 
-			
-			<!--__--__--__--__--  T H E    F O O T E R --__--__--__--___--__--__--__-->
-			<footer>
-				<p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from <a href="http://geeksband.com">Geeksband.com</a> All Rights Reserved.</p>
-			</footer>
-		</div>			
-	</body>
+									{% block listaCoches %}
+									{% if coches %}
+										<ul>
+											<h1>Coches disponibles: </h1> <br>
+										{% for cs in coches %}
+											{% if c.id == cs.categoria.id %}
+												<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1>
+													{% load static %}
+														<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 	
+												{% endif %}	
+										{% endfor %}
+										</ul>
+									{% else %}
+										<p>No hay coches creados.</p>
+									{% endif %}
+									{% endblock %}
+									<br> <br> <br>
+
+								{% endfor %}
+							{% else %}
+								<p>No hay marcas creadas.</p>
+							{% endif %}
+					
+			</div>
+			{% endblock %}	
+			<!--__--__--__--  S I D E B A R --__--__--__--__-->
+			<div id="sidebar">
+				<aside>
+					<div id="cat">
+						
+							<h1>Categorias</h1>
+								<br>
+								{% if lista_categorias %}
+									{% for c in lista_categorias %}
+										<ul>
+											<h2><li><a href="{% url 'categoria' c.id %}">{{ c.nombre }}</a></h2>
+										</ul>	
+									{% endfor %}
+								{% else %}
+									<p>No hay categorias creadas.</p>
+								{% endif %}
+						
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		
+		<!--__--__--__--__--  T H E    F O O T E R --__--__--__--___--__--__--__-->
+		<footer>
+			<p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from <a href="http://geeksband.com">Geeksband.com</a> All Rights Reserved.</p>
+		</footer>
+	</div>			
+</body>
 </html>
-{% endblock %}	
+
 		
 		
 			

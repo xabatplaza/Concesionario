@@ -5,16 +5,9 @@ from .models import Marca, Categoria, Coche, Combustible
 from pprint import pprint
 
 
-
-
 def contact(request):
 	return render(request, 'contact.html')
 
-def singlepost(request):
-	return render(request, 'singlepost.html')
-
-def todoterrenos(request):
-	return render(request, 'todoterrenos.html')
 	
 #devuelve el listado de marcas
 def index(request):
@@ -37,11 +30,11 @@ def blog(request):
 
 
 #devuelve los coches de una marca
-def coches(request, marca_id):
-	marca = get_object_or_404(Marca, pk=marca_id)
-	coches =  marca.coche_set.all()
-	context = {'marca': marca, 'coches' : coches }
-	return render(request, 'marcas.html', context)
+# def coches(request, marca_id):
+# 	marca = get_object_or_404(Marca, pk=marca_id)
+# 	coches =  marca.coche_set.all()
+# 	context = {'marca': marca, 'coches' : coches }
+# 	return render(request, 'marcas.html', context)
 	
 
 #devuelve los detalles de un coche por categoria
@@ -50,6 +43,7 @@ def indexcar(request):
 	coches = get_list_or_404(Coche.objects)
 	context = {'lista_categorias': categorias, 'coches' : coches, 'categoria': categoria }
 	return render(request, 'indexcar.html', context)
+
 
 #devuelve los detalles de un coche
 def coche(request, coche_id):

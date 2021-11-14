@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{% block css %}    
        		{% load static %}
-				<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+				<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 				<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen">
 				<link rel="stylesheet" href="{% static 'css/default/default.css' %}" type="text/css" media="screen">
 		{% endblock %}
@@ -26,7 +26,7 @@
 			<!--__--__--__--__--__--  L O G O  &   N A V    B A R --__--___--__--__--__-->
 			<header>
 				<div id="logo">
-				<h1>Resale X <span id="iisrt"><span id="ii">II</span>  <span id="srt">SRT</span></span></h1>
+				<h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
 				<div id="tagline">
 					<h2>¡Otra forma de conducir!</h2>
 				</div>
@@ -45,12 +45,13 @@
 			<!--__--__--__--__--  T H E    S L I D E R --__--__--__--___--__--__--__-->
 			<div class="slider-wrapper theme-default">
 				<div id="slider" class="nivoSlider">
-					<img src="../static/img/audia3.jpg" alt="" />
-					<a href="http://geeksband.com"><img src="../static/img/audirs7sport.jpeg" alt="" title="This is an example of a caption with a link" /></a>
-					<img src="../static/img/bmwm3.jpg" alt="" title="This is an example of a caption" />
-					<img src="../static/img/mercedescoupe.jpeg" alt="" />
+					<img src="../static/img/audia3.jpg" alt="" title="AUDI A3"/>
+					<img src="../static/img/audirs7sport.jpeg" alt="" title="AUDI RS7 SPORTBACK" /></a>
+					<img src="../static/img/bmwm3.jpg" alt="" title=" BMW M3" />
+					<img src="../static/img/mercedescoupe.jpeg" alt="" title="MERCEDES CLASE C" />
 				</div>
 			</div>
+
 			<script type="text/javascript">
 			$(window).load(function() {
 				$('#slider').nivoSlider({pauseTime: 6000,});
@@ -79,7 +80,7 @@
 															<h1>Descripcion:</h1> 
 															<br>
 															<p>{{cs.info}} </p> <br>
-															<a href="{% url 'coche' cs.id %}" class="rm">Read More</a><br><br>
+															<a href="{% url 'coche' cs.id %}" class="rm">Leer mas</a><br><br>
 													</article>
 													{% endif %}			
 												{% endfor %}
@@ -116,7 +117,7 @@
 															<br>
 															<p>{{cs.info}} <a href="{% url 'singlepost' %}"> 
 															<br><br>
-															<a href="{% url 'coche' cs.id %}" class="rm">Read More</a><br>
+															<a href="{% url 'coche' cs.id %}" class="rm">Leer mas</a><br>
 													</article>
 													{% endif %}			
 												{% endfor %}
@@ -131,7 +132,7 @@
 			</section>				
 			<!--__--__--__--__--  T H E    F O O T E R --__--__--__--___--__--__--__-->
 			<footer>
-				<p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from <a href="http://geeksband.com">Geeksband.com</a>. All Rights Reserved.</p>
+				<p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from. All Rights Reserved.</p>
 			</footer>
 		</div>			
 	</body>

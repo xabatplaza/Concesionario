@@ -1,7 +1,7 @@
 
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render
-from .models import Marca, Categoria, Coche
+from .models import Marca, Categoria, Coche, Combustible
 from pprint import pprint
 
 
@@ -54,7 +54,8 @@ def indexcar(request):
 #devuelve los detalles de un coche
 def coche(request, coche_id):
 	coche = get_object_or_404(Coche, pk=coche_id)
-	context = {'coche' : coche }
+	combustibles= coche.combustibles.all()
+	context = {'coche' : coche, 'combustibles' : combustibles }
 	return render(request, 'coche.html', context)
 
 

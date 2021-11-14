@@ -58,7 +58,19 @@
 						<li><h2 class="mg"> Marca &rarr; {{coche.marca}} </h2></li>
 						<li><h2 class="mg"> Categoria &rarr; {{coche.categoria}} </h2></li>
 						<li><h2 class="mg">Fecha de creacion  &rarr; {{coche.fecha_creacion}}</h2></li>
-						<li><h2 class="mg">Potencia &rarr; {{coche.caballosPotencia}} CV</h2></li>
+						<li><h2 class="mg">Potencia &rarr; {{coche.caballosPotencia}} CV</h2></li><br>
+						<li><h2 class="mg">Lista de combustibles :</h3></li>
+						
+							<ol>
+							{% if combustibles %}
+							{% for c in combustibles %}
+								<li><h3 class="mg" >&nbsp;&nbsp; &nbsp;&nbsp;{{ c.nombre}}</h2></li> 
+							{% endfor %}
+							</ol>
+						{% else %}
+							<p>No tiene combustibles asociadas.</p>
+						{% endif %}
+							<br>
 						</ul>
 						
 					{% endblock %}

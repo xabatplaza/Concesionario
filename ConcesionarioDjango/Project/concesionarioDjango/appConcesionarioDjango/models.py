@@ -18,11 +18,19 @@ class Categoria(models.Model):
  imagen= models.ImageField(upload_to='img',blank=True,null=True,verbose_name='Image')
  def __str__(self):
         return self.nombre
+ 
+class Combustible(models.Model):
+ # No es necesario crear un campo para la Primary Key, Django creará automáticamente un IntegerField.
+ nombre = models.CharField(max_length=50)
+ info= models.CharField(max_length=500, default='SOME STRING')
+ def __str__(self):
+        return self.nombre
 
 class Coche(models.Model):
  # Campo para la relación one-to-many
  marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
  categoria= models.ForeignKey(Categoria, on_delete=models.CASCADE)
+ combustibles= models.ManyToManyField(Combustible)
  info= models.CharField(max_length=500, default='SOME STRING')
  imagen= models.ImageField(upload_to='img',blank=True,null=True,verbose_name='Image')
  nombre = models.CharField(max_length=40)

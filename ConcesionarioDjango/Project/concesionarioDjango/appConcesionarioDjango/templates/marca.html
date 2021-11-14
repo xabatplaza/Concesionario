@@ -43,23 +43,25 @@
 			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
 
 			<section>
-				{% if categoria %}		
+				{% if marca %}		
 
 						<article id="singlepost">
-						<h1><a href="{% url 'blog' %}">{{categoria.nombre}}</a></h1> <br>
-						<p>{{categoria.info}}</p>
+						<h1><a href="{% url 'marcas' %}">{{marca.nombre}}</a></h1> <br>
+                        {% load static %}
+							<img alt="{{ marca.imagen }}" src="{% static marca.imagen %}" /> <br><br>
+						<p>{{marca.info}}</p>
 						<br>
 						{% block listaCoches %}
 											{% if coches %}
 												<ul>
-												{% for cs in coches %}
-													{% if categoria.id == cs.categoria.id %}
+												{% for m in coches %}
+													{% if marca.id == m.marca.id %}
 														<br>
-														<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1><br>
+														<h1><li><a href="{% url 'coche' m.id %}"> &nbsp {{ m.nombre }}</a></h1><br>
 															{% load static %}
-																<img alt="{{ cs.imagen }}" src="{% static cs.imagen %}" /> 	
+																<img alt="{{ m.imagen }}" src="{% static m.imagen %}" /> 	
 																<h2 class="mg">Informacion</h2>
-																<p>{{cs.info}}</p> <br><br>
+																<p>{{m.info}}</p> <br><br>
 														{% endif %}	
 												{% endfor %}
 												</ul>
@@ -68,7 +70,7 @@
 											{% endif %}
 						{% endblock %}
 				{% else %}
-					<p>No existe esta categoria.</p>
+					<p>No existe esta marca.</p>
 				{% endif %}
 											<br> <br> <br>
 						</article>
@@ -77,16 +79,16 @@
 				<div id="sidebar">
 					<aside>
 						<div id="cat">
-							<h1>Categoria</h1>
+							<h1>Marca</h1>
 									<br>
-									{% if categoria %}
+									{% if marca %}
 										
 											<ul>
-											 <h2><li><a href="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</a></h2>
+											 <h2><li><a href="{% url 'marca' marca.id %}">{{ marca.nombre }}</a></h2>
 											</ul>	
 										
 									{% else %}
-										<p>No hay categorias creadas.</p>
+										<p>No hay marcas creadas.</p>
 									{% endif %}
 						</div>
 						
@@ -101,9 +103,3 @@
 	</body>
 </html>
 {% endblock %}
-		
-		
-		
-			
-    
-    

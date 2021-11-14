@@ -22,8 +22,8 @@ class Categoria(models.Model):
 class Coche(models.Model):
  # Campo para la relación one-to-many
  marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+ categoria= models.ForeignKey(Categoria, on_delete=models.CASCADE)
  info= models.CharField(max_length=500, default='SOME STRING')
- categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
  imagen= models.ImageField(upload_to='img',blank=True,null=True,verbose_name='Image')
  nombre = models.CharField(max_length=40)
  fecha_creacion = models.DateField()

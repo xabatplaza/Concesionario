@@ -35,12 +35,6 @@ def blog(request):
 	context = {'lista_categorias': categorias, 'coches' : coches }
 	return render(request, 'blog.html', context)
 
-#devuelve los datos de una marca
-def marca(request, marca_id):
-	marca = get_object_or_404(Marca, pk=marca_id)
-	#output = ', '.join([str(marca.id), marca.nombre, str(marca.anyoDeCreacion), marca.fundador])
-	context = {'marca': marca }
-	return render(request, 'marca.html', context)
 
 #devuelve los coches de una marca
 def coches(request, marca_id):
@@ -71,3 +65,9 @@ def categoria(request, categoria_id):
 	context = { 'coches': coches, 'categoria' : categoria }
 	return render(request, 'categoria.html', context)
 
+#devuelve los detalles de una marca
+def marca(request, marca_id):
+	marca = get_object_or_404(Marca, pk=marca_id)
+	coches = marca.coche_set.all()
+	context = {'coches': coches, 'marca': marca }
+	return render(request, 'marca.html', context)

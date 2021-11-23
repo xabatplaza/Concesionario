@@ -66,3 +66,6 @@ def marca(request, marca_id):
 	coches = marca.coche_set.all()
 	context = {'coches': coches, 'marca': marca }
 	return render(request, 'marca.html', context)
+
+def formulario(request):
+	return render(request, 'formulario.html')

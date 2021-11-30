@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render
 from .models import Marca, Categoria, Coche, Combustible
 from pprint import pprint
-
+from django.http import HttpResponse
 
 def contact(request):
 	return render(request, 'contact.html')
@@ -69,3 +69,7 @@ def marca(request, marca_id):
 
 def formulario(request):
 	return render(request, 'formulario.html')
+
+def usuariocreado(request):
+	mensaje="Usuario %r registrado" %request.GET["nombres"]
+	return HttpResponse(mensaje)

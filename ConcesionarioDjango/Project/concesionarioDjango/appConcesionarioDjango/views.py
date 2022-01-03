@@ -1,9 +1,11 @@
 
 from django.shortcuts import get_object_or_404, get_list_or_404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Marca, Categoria, Coche, Combustible
 from pprint import pprint
 from django.http import HttpResponse
+from .forms import UserRegisterForm
+from django.contrib import messages
 
 def contact(request):
 	return render(request, 'contact.html')
@@ -67,9 +69,19 @@ def marca(request, marca_id):
 	context = {'coches': coches, 'marca': marca }
 	return render(request, 'marca.html', context)
 
-def formulario(request):
-	return render(request, 'formulario.html')
+def register(request):
+	if request.method == 'POST':
+		form = UserRegisterForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data['username']
+			messages.success(request, f'Usuario{username} creado')
+			return redirect('blog')
+	else:
+		form = UserRegisterForm()
 
-def usuariocreado(request):
-	mensaje="Usuario %r registrado" %request.GET["nombres"]
-	return HttpResponse(mensaje)
+	context = { 'form' : form }
+	return render(request, 'register.html', context)
+
+
+

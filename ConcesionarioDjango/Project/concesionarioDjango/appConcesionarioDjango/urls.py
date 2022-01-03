@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('', views.indexcar, name='indexcar'),
@@ -15,6 +18,7 @@ urlpatterns = [
     path('coche/<int:coche_id>', views.coche, name='coche'),
     path('categoria/<int:categoria_id>', views.categoria, name='categoria'),
 
-    path('formulario/', views.formulario, name='formulario'),
-    path('usuariocreado/', views.usuariocreado, name='usuariocreado')
+    path('register/', views.register, name='register'),
+    path('login/', LoginView.as_view(template_name='templates/login.html'), name='login'),
+    path('logout/', LogoutView.as_view(template_name='templates/logout.html'), name='logout'),
 ]

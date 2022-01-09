@@ -1,10 +1,12 @@
+{%load static%}
+{% load i18n %}
 {% block content %}
 
 <!DOCTYPE html>
 <html>
     <style>
         .label{
-            width: 100%;
+            width:  100%;
         }
 
     input[type=text]{
@@ -54,9 +56,46 @@
     background-color: #f2f2f2;
     padding: 20px;
   }
-      
+  
+  form{
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-right: 30%;
+    border: groove, black;
+  }
+  .button{
+    margin-left: 40%;
+  }
+  #cuerpo{
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-right: 30%;
+  }
       
     </style>
+    <body id="home">
+      <div id="wrapper">
+        <header>
+          <div id="logo">
+          <h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
+          <div id="tagline">
+            <h2>{% trans "¡Otra forma de conducir!"%}</h2>
+          </div>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="{% url 'indexcar' %}" id="homenav">{% trans "Principal"%}</a></li>
+              <li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
+              <li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
+              <li><a href="{% url 'register' %}">{% trans "Registro"%}</a></li>
+              <li><a href="{% url 'login' %}">{% trans "Login"%}</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </header>
+    </div>
+  </body>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +103,9 @@
         
         {% block css %}    
         {% load static %}
-         <link rel="stylesheet" href="{% static 'css/formstyle.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{% static 'css/default/default.css' %}" type="text/css" media="screen">
          {% endblock %}
         <title>Formulario registro</title>
     </head>
@@ -75,7 +116,7 @@
         </div>
         {% endfor %}
     {% endif %}
-    <body>
+    <body id="cuerpo">
         <form class="form"  method="post">
             {% csrf_token %}
             {{ form.as_p }}

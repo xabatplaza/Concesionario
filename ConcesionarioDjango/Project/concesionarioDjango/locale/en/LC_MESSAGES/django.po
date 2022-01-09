@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-09 12:51+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:35
+#: .\concesionarioDjango\appConcesionarioDjango\templates\categoria.html:31
+#: .\concesionarioDjango\appConcesionarioDjango\templates\coche.html:31
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:30
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:33
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marca.html:29
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:27
+msgid "¡Otra forma de conducir!"
+msgstr "¡Another form to drive!"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:40
+#: .\concesionarioDjango\appConcesionarioDjango\templates\categoria.html:36
+#: .\concesionarioDjango\appConcesionarioDjango\templates\coche.html:36
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:35
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:38
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marca.html:34
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:32
+msgid "Principal"
+msgstr "Home"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:41
+#: .\concesionarioDjango\appConcesionarioDjango\templates\categoria.html:37
+#: .\concesionarioDjango\appConcesionarioDjango\templates\coche.html:37
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:36
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:39
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marca.html:35
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:33
+msgid "Categoría"
+msgstr "Category"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:42
+#: .\concesionarioDjango\appConcesionarioDjango\templates\categoria.html:38
+#: .\concesionarioDjango\appConcesionarioDjango\templates\coche.html:38
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:37
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:40
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marca.html:36
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:34
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:96
+msgid "Marca"
+msgstr "Brand"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:43
+#: .\concesionarioDjango\appConcesionarioDjango\templates\categoria.html:39
+#: .\concesionarioDjango\appConcesionarioDjango\templates\coche.html:39
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:38
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:47
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:41
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marca.html:37
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:35
+msgid "Contactanos"
+msgstr "Contact us"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:63
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:56
+msgid "Descripcion:"
+msgstr "Description"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:73
+#: .\concesionarioDjango\appConcesionarioDjango\templates\marcas.html:69
+msgid "Coches disponibles:"
+msgstr "Avaliable cars"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\blog.html:100
+msgid "Categorias"
+msgstr ""
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\categoria.html:82
+msgid "Categoria"
+msgstr "Categories"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\coche.html:58
+msgid "Lista de especificacion"
+msgstr "Specifications list"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\contact.html:58
+msgid "NOTA: Para contactar con nosotros, es necesario introducir"
+msgstr "NOTE: To contact with us, it's necessary to be registered"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:67
+msgid "TODOTERRENOS"
+msgstr "ALL TERRAIN"
+
+#: .\concesionarioDjango\appConcesionarioDjango\templates\indexcar.html:100
+msgid "DEPORTIVOS Y COUPES"
+msgstr "SPORTS AND COUPE CARS"

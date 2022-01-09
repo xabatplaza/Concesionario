@@ -1,4 +1,5 @@
-
+{%load static%}
+{% load i18n %}
 <!DOCTYPE html>
 	<html>
 		<head>
@@ -23,15 +24,15 @@
 					<div id="logo">
 					<h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
 					<div id="tagline">
-						<h2>¡Otra forma de conducir!</h2>
+						<h2>{% trans "¡Otra forma de conducir!"%}</h2>
 					</div>
 					</div>
 					<nav>
 						<ul>
-							<li><a href="{% url 'indexcar' %}" id="homenav">Principal</a></li>
-							<li><a href="{% url 'blog' %}" id="homenav">Categoría</a></li>
-							<li><a href="{% url 'marcas' %}" id="blognav">Marca</a></li>
-							<li><a href="{% url 'contact' %}">Contactanos</a></li>
+							<li><a href="{% url 'indexcar' %}" id="homenav">{% trans "Principal"%}</a></li>
+							<li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
+							<li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
+							<li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
 							<li><a href="#">About</a></li>
 						</ul>
 					</nav>
@@ -52,7 +53,7 @@
 											{% load static %}
 												<img alt="{{ m.imagen }}" src="{% static m.imagen %}" /> 
 											<br><br>	
-											<h1>Descripcion:</h1> 
+											<h1>{% trans "Descripcion:"%}</h1> 
 											<br>
 											<p>{{m.info}} <a href="{% url 'marca' m.id %}"> 
 												<br> <br>
@@ -65,7 +66,7 @@
 											{% block listaCoches %}
 											{% if coches %}
 												<ul>
-													<h1>Coches disponibles: </h1> <br>
+													<h1>{% trans "Coches disponibles:"%}</h1> <br>
 												{% for cs in coches %}
 													{% if m.id == cs.marca.id %}
 														<h1><li><a href="{% url 'coche' cs.id %}"> &nbsp {{ cs.nombre }}</a></h1>	
@@ -92,7 +93,7 @@
 					<div id="sidebar">
 						<aside>
 							<div id="archives">
-									<h1>Marca</h1>
+									<h1>{% trans "Marca"%}</h1>
 									<br>
 									{% if lista_marcas %}
 										{% for m in lista_marcas %}

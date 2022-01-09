@@ -1,3 +1,5 @@
+{%load static%}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,15 +26,15 @@
 				<div id="logo">
 				<h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
 				<div id="tagline">
-					<h2>¡Otra forma de conducir!</h2>
+					<h2>{% trans "¡Otra forma de conducir!"%}</h2>
 				</div>
 				</div>
 				<nav>
 					<ul>
-						<li><a href="{% url 'indexcar' %}" id="homenav">Principal</a></li>
-						<li><a href="{% url 'blog' %}" id="blognav">Categoría</a></li>
-						<li><a href="{% url 'marcas' %}">Marca</a></li>
-						<li><a href="{% url 'contact' %}">Contactanos</a></li>
+						<li><a href="{% url 'indexcar' %}" id="homenav">{% trans "Principal"%}</a></li>
+						<li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
+						<li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
+						<li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
 						<li><a href="#">About</a></li>
 					</ul>
 				</nav>

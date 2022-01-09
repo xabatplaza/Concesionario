@@ -1,3 +1,5 @@
+{%load static%}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,18 +27,16 @@
 				<div id="logo">
 				<h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
 				<div id="tagline">
-					<h2>¡Otra forma de conducir!</h2>
+					<h2>{% trans "¡Otra forma de conducir!"%}</h2>
 				</div>
 				</div>
 				<nav>
 					<ul>
-
-
-						<li><a href="{% url 'indexcar' %}" id="homenav">Principal</a></li>
-							<li><a href="{% url 'blog' %}" id="homenav">Categoría</a></li>
-							<li><a href="{% url 'marcas' %}" id="blognav">Marca</a></li>
-							<li><a href="{% url 'contact' %}">Contactanos</a></li>
-							<li><a href="#">About</a></li>
+						<li><a href="{% url 'indexcar' %}" id="homenav">{% trans "Principal"%}</a></li>
+						<li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
+						<li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
+						<li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
+						<li><a href="#">About</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -44,7 +44,7 @@
 			<!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
 			<section>
 				<div id="contactpost">
-					<h1>Contact Us</h1>
+					<h1>{% trans "Contactanos"%}</h1>
 					<p>Below is an example of how a contact form might look with this template:</p>
 					<form method="post" action="#">
 				        <div id="contactform">
@@ -55,7 +55,7 @@
 						</div>
 				    </form>
 					&nbsp;
-					<p>NOTA: Para contactar con nosotros, es necesario introducir<br />
+					<p>{% trans "NOTA: Para contactar con nosotros, es necesario introducir"%}<br />
 					una direccion de email.</p>
 				</div>
 

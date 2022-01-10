@@ -41,5 +41,10 @@ class Coche(models.Model):
  def __str__(self):
         return self.nombre
 
-
-   
+class Contact(models.Model):
+ # No es necesario crear un campo para la Primary Key, Django creará automáticamente un IntegerField.
+ nombre = models.CharField(max_length=50)
+ email = models.EmailField()
+ message= models.TextField()
+ def __str__(self):
+        return self.nombre

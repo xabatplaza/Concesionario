@@ -1,14 +1,25 @@
 
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
-from .models import Marca, Categoria, Coche, Combustible
+from .models import Marca, Categoria, Coche, Combustible, Contact
 from pprint import pprint
 from django.http import HttpResponse
 from .forms import UserRegisterForm
 from django.contrib import messages
 
 def contact(request):
+	if request.method == 'POST':
+		contact=Contact()
+		nombre=request.POST.get('name')
+		email=request.POST.get('email')
+		message=request.POST.get('message')
+		contact.nombre=nombre
+		contact.email=email
+		contact.message=message
+		contact.save()
+		return HttpResponse("<h1>Thanks for contact us</h1>")
 	return render(request, 'contact.html')
+	
 
 	
 #devuelve el listado de marcas
@@ -76,7 +87,7 @@ def register(request):
 			form.save()
 			username = form.cleaned_data['username']
 			messages.success(request, f'Usuario{username} creado')
-			return redirect('blog')
+			return redirect('indexcar')
 	else:
 		form = UserRegisterForm()
 

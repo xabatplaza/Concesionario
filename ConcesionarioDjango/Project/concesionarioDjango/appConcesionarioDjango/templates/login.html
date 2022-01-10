@@ -3,104 +3,76 @@
 {% block content %}
 <!DOCTYPE html>
 <html>
-    <style>
-        .label{
-            width: 50%;
-        }
-
-    input[type=text]{
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  input[type=email]{
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  input[type=password]{
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  input[type=submit] {
-    width: 50%;
-    background-color: #4CAF50;
-    color: rgb(255, 255, 255);
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-      
-  form{
-    margin-left: 30%;
-    margin-top: 5%;
-    margin-right: 30%;
-    border: groove, black;
-  }
-      
-    </style>
-     <body id="home">
-      <div id="wrapper">
-        <header>
-          <div id="logo">
-          <h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
-          <div id="tagline">
-            <h2>{% trans "¡Otra forma de conducir!"%}</h2>
-          </div>
-          </div>
-          <nav>
-            <ul>
-              <li><a href="{% url 'indexcar' %}" id="homenav">{% trans "Principal"%}</a></li>
-              <li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
-              <li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
-              <li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
-              <li><a href="{% url 'register' %}">{% trans "Registro"%}</a></li>
-              <li><a href="{% url 'login' %}">{% trans "Login"%}</a></li>
-              <li><a href="#">About</a></li>
-            </ul>
-          </nav>
-        </header>
-    </div>
-  </body>
-    {% block css %}    
-    {% load static %}
+  <head>
+    <meta charset="utf-8" />
+{% block css %}    
+       {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" >
     <link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen">
     <link rel="stylesheet" href="{% static 'css/default/default.css' %}" type="text/css" media="screen">
-     {% endblock %}
-<form class='form' method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
+{% endblock %}
+{% block js %}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="../static/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+{% endblock %} 
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Source X SRT</title>
+</head>
+<body id="contact">
+<div id="wrapper">
 
-    <button type="submit" id="submit">Login</button>
-</form>
-<footer>
-  <p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from. All Rights Reserved.</p>
-</footer>
+  <!--__--__--__--__--__--  L O G O  &   N A V    B A R --__--___--__--__--__-->
+  <header>
+    <div id="logo">
+    <h1>Resale X <span id="iisrt"><span id="ii">SRTSRT</span>  <span id="srt">SRT</span></span></h1>
+    <div id="tagline">
+      <h2>{% trans "¡Otra forma de conducir!"%}</h2>
+    </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="{% url 'indexcar' %}" id="homenav">{% trans "Principal"%}</a></li>
+        <li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
+        <li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
+        <li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
+        <li><a href="{% url 'register' %}">{% trans "Register"%}</a></li>
+        <li><a href="{% url 'login' %}">{% trans "Login"%}</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  {% if messages %}
+        {% for message in messages %}
+        <div class="notification {{ messsage.tags}}">
+            {{message}}
+        </div>
+        {% endfor %}
+    {% endif %}
+  <!--__--__--__--__--  M A I N   C O N T E N T  --__--__--__--___--__--__-->
+  <section>
+    <div id="contactpost">
+      <h1>{% trans "Login"%}</h1>
+      <p>Below is a form to log in:</p>
+      <form class='form' method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button type="submit" id="submit">Login</button>
+    </form>
+      &nbsp;
+    </div>
+
+    <!--__--__--__--  S I D E B A R --__--__--__--__-->
+    
+  </section>
+  <!--__--__--__--__--  T H E    F O O T E R --__--__--__--___--__--__--__-->
+  <footer>
+    <p>Copyright &copy 2013 Source X by Youssef Nassim and Zakariya Lhamri, design from <a href="http://geeksband.com">Geeksband.com</a> All Rights Reserved.</p>
+  </footer>
+</div>			
+</body>
+    
 </html>
 {% endblock %}

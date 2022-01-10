@@ -36,7 +36,7 @@
 						<li><a href="{% url 'blog' %}" id="blognav">{% trans "Categoría"%}</a></li>
 						<li><a href="{% url 'marcas' %}">{% trans "Marca"%}</a></li>
 						<li><a href="{% url 'contact' %}">{% trans "Contactanos"%}</a></li>
-						<li><a href="{% url 'register' %}">{% trans "Registro"%}</a></li>
+						<li><a href="{% url 'register' %}">{% trans "Register"%}</a></li>
 						<li><a href="{% url 'login' %}">{% trans "Login"%}</a></li>
 						<li><a href="#">About</a></li>
 					</ul>
@@ -49,6 +49,7 @@
 					<h1>{% trans "Contactanos"%}</h1>
 					<p>Below is an example of how a contact form might look with this template:</p>
 					<form method="post" action="#">
+						{% csrf_token %}
 				        <div id="contactform">
 						<p><label for="name">Nombre</label><input type="user" name="name" id="name" placeholder="your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'your name'" /></p> 
 						<p><label for="email">Email</label><input type="email" name="email" id="email" placeholder="your@email.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'your@email.com'" /></p> 
